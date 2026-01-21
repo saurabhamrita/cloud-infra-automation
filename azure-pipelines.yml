@@ -1,0 +1,26 @@
+trigger:
+- main
+
+pool: MUSA
+
+stages:
+  - stage: Terraform init
+    jobs:
+      - job: Terraforminit
+        displayName: Terraforminit
+        steps:
+        - task: TerraformInstaller@1
+          inputs:
+            terraformVersion: 'latest'
+
+        - task: TerraformTask@5
+          inputs:
+            provider: 'azurerm'
+            command: 'init'
+            workingDirectory: '$(System.DefaultWorkingDirectory)Environment/Dev'
+            backendServiceArm: 'slc'
+            backendAzureRmResourceGroupName: 'sssss'
+            backendAzureRmStorageAccountName: 'pppscshcs'
+            backendAzureRmContainerName: 'dfjwwnqw'
+            backendAzureRmKey: 'dev.terraform.tfstate'
+
