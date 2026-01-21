@@ -1,10 +1,10 @@
 trigger:
 - main
 
-pool: MUSA
+pool: infra-pool-Automation
 
 stages:
-  - stage: Terraform init
+  - stage: Terraforminit
     jobs:
       - job: Terraforminit
         displayName: Terraforminit
