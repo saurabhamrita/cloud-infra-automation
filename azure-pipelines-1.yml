@@ -9,12 +9,16 @@ stages:
         - task: TerraformInstaller@1
           inputs:
             terraformVersion: 'latest'
+
         - task: TerraformTask@5
           inputs:
             provider: 'azurerm'
             command: 'init'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/Environment/Dev'
             backendServiceArm: 'manoj bhai sp'
-            backendAzureRmStorageAccountName: 'sss'
-            backendAzureRmContainerName: 'fff'
+            backendAzureRmResourceGroupName: 'rgs'
+            backendAzureRmStorageAccountName: 'stg'
+            backendAzureRmContainerName: 'ggggdd'
             backendAzureRmKey: 'saurabh.tfstate'
+
 
