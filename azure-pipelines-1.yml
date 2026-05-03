@@ -1,0 +1,16 @@
+trigger: none
+pool: pipele_new
+
+stages:
+  - stage: init
+    jobs:
+      - job: init
+        steps:
+        - task: TerraformTask@5
+          inputs:
+            provider: 'azurerm'
+            command: 'init'
+            backendServiceArm: 'manoj bhai sp'
+            backendAzureRmStorageAccountName: 'ssssccc'
+            backendAzureRmContainerName: 'qefefe'
+            backendAzureRmKey: 'SAfdAGDJ'
