@@ -21,4 +21,11 @@ stages:
             backendAzureRmContainerName: 'ggggdd'
             backendAzureRmKey: 'saurabh.tfstate'
 
+        - task: TerraformTask@5
+          inputs:
+            provider: 'azurerm'
+            command: 'plan'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/Environment/Dev'
+            environmentServiceNameAzureRM: 'manoj bhai sp'
+
 
